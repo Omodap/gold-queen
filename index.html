@@ -1,99 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d20">
-  <meta name="description" content="GOLD QUEEN — automated gold trading with configurable martingale and hedging logic. Explore features, understand the risks and learn more.">
-  <title>GOLD QUEEN | Automated Gold Trading</title>
-  <style>
-    :root{--bg:#080d20;--panel:#101a35;--panel2:#121f40;--blue:#3988ff;--pink:#ff4fa3;--text:#f6f8ff;--muted:#aab6d1;--line:rgba(150,180,255,.16);--glow:0 0 45px rgba(57,136,255,.18)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 0%,rgba(255,79,163,.12),transparent 32%),radial-gradient(ellipse at 5% 20%,rgba(57,136,255,.16),transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1.5px}.crown{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--pink));box-shadow:var(--glow);font-size:21px}.brand span:last-child{font-size:15px}.navlinks{display:flex;gap:26px;color:var(--muted);font-size:13px}.navlinks a:hover{color:#fff}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;font-weight:800;font-size:13px;letter-spacing:.2px;background:linear-gradient(100deg,var(--blue),#756bff 55%,var(--pink));box-shadow:0 10px 30px rgba(78,106,255,.22);transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn.ghost{background:transparent;border:1px solid rgba(140,170,255,.35);box-shadow:none}.hero{padding:90px 0 76px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px;min-height:570px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#c5d5ff;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--line);background:rgba(18,31,64,.65);padding:8px 12px;border-radius:30px}.dot{width:7px;height:7px;background:var(--pink);border-radius:50%;box-shadow:0 0 12px var(--pink)}h1{font-size:clamp(44px,6.3vw,76px);line-height:1.02;letter-spacing:-3px;margin:22px 0 18px;font-weight:950}.gradient{background:linear-gradient(100deg,#6eb2ff 10%,#c18cff 55%,#ff78b8);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:570px;color:var(--muted);font-size:16px;margin:0 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}.fine{font-size:11px!important;color:#8391b2!important;margin-top:18px!important}.visual{position:relative;min-height:390px;display:grid;place-items:center}.orb{width:min(340px,80vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 28%,rgba(117,181,255,.9),rgba(72,91,220,.35) 28%,rgba(255,79,163,.16) 58%,transparent 70%);border:1px solid rgba(143,173,255,.25);box-shadow:0 0 80px rgba(57,136,255,.16),inset 0 0 60px rgba(255,79,163,.12);display:grid;place-items:center;position:relative}.orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(120,166,255,.23);border-radius:50%;inset:-25px;transform:rotate(-22deg) scaleY(.48)}.orb:after{inset:-50px;transform:rotate(28deg) scaleY(.48);border-color:rgba(255,79,163,.24)}.queenmark{font-size:112px;filter:drop-shadow(0 0 25px rgba(255,79,163,.35))}.float-card{position:absolute;background:rgba(14,24,51,.88);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--glow);font-size:12px;color:var(--muted)}.float-card strong{display:block;color:white;font-size:14px}.fc1{top:42px;right:0}.fc2{bottom:42px;left:0}.section{padding:76px 0}.section-head{text-align:center;max-width:690px;margin:0 auto 38px}.kicker{color:#8ebcff;text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:11px}.section h2{font-size:clamp(29px,4vw,43px);line-height:1.15;letter-spacing:-1.2px;margin:10px 0 12px}.section-head p,.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:24px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,31,64,.88),rgba(12,19,41,.88));box-shadow:var(--glow)}.icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(57,136,255,.25),rgba(255,79,163,.2));border:1px solid var(--line);font-size:20px}.card h3{font-size:17px;margin:16px 0 7px}.card p{color:var(--muted);font-size:13px;margin:0}.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}.feature-panel{border-radius:22px;padding:30px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(57,136,255,.12),rgba(255,79,163,.08)),var(--panel)}.feature-panel h3{font-size:23px;margin:0 0 12px}.checks{list-style:none;padding:0;margin:18px 0 0}.checks li{padding:10px 0;border-bottom:1px solid var(--line);color:#d9e2f7;font-size:13px}.checks li:before{content:"✦";color:var(--pink);margin-right:10px}.notice{border:1px solid rgba(255,79,163,.32);background:rgba(255,79,163,.07);border-radius:18px;padding:22px 24px;color:#e8d9e5}.notice strong{color:#fff}.notice p{margin:8px 0 0;font-size:13px;color:#c5b8ca}.cta{padding:38px;border-radius:24px;text-align:center;border:1px solid var(--line);background:radial-gradient(circle at 15% 0%,rgba(57,136,255,.24),transparent 42%),radial-gradient(circle at 90% 100%,rgba(255,79,163,.2),transparent 42%),var(--panel)}.cta p{color:var(--muted);max-width:590px;margin:0 auto 22px}.footer{padding:30px 0;border-top:1px solid var(--line);color:#8795b5;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.disclaimer{max-width:760px;margin-top:14px}.menu-btn{display:none;background:none;border:1px solid var(--line);color:white;border-radius:9px;padding:8px 11px}
-    @media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0b132b;padding:18px 22px;flex-direction:column;gap:16px;border-bottom:1px solid var(--line);z-index:5}.navlinks.open{display:flex}.menu-btn{display:block}.nav>.btn{display:none}.hero{grid-template-columns:1fr;padding:65px 0 45px;gap:15px;text-align:center}.hero p{margin-left:auto;margin-right:auto}.actions{justify-content:center}.visual{min-height:330px}.orb{width:260px}.queenmark{font-size:88px}.fc1{right:2%}.fc2{left:2%}.grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.section{padding:58px 0}}
-    @media(max-width:520px){.wrap{width:min(100% - 30px,1120px)}h1{letter-spacing:-2px}.grid{grid-template-columns:1fr}.card{padding:21px}.visual{min-height:300px}.orb{width:220px}.float-card{font-size:10px;padding:10px 12px}.fc1{top:12px}.fc2{bottom:12px}.cta{padding:28px 20px}.footer-inner{display:block}.footer-inner span{display:block;margin-bottom:8px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b18">
+
+<title>GOLD QUEEN | Intelligent Gold Trading</title>
+
+<meta name="description" content="Discover GOLD QUEEN, an automated trading system designed for XAUUSD. Explore its features, live sessions and software access.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #080b18;
+    --card: #11172a;
+    --blue: #3987ff;
+    --pink: #f044a5;
+    --white: #ffffff;
+    --muted: #a6afc4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #090d1c;
+    border-bottom: 1px solid #202941;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+nav {
+    display: flex;
+    gap: 23px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 13px;
+    color: #d6dcec;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+}
+
+.hero {
+    min-height: 610px;
+    padding: 110px 8%;
+    display: flex;
+    align-items: center;
+    background:
+    radial-gradient(circle at 85% 30%, #172d5b 0%, transparent 40%),
+    radial-gradient(circle at 15% 80%, #42163e 0%, transparent 35%),
+    #080b18;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 15px;
+    border: 1px solid var(--pink);
+    color: #ff80c8;
+    border-radius: 30px;
+    font-size: 12px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    line-height: 1.12;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, var(--blue), var(--pink));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 550px;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, var(--blue), var(--pink));
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid #48536d;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 85px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-title h2 span {
+    color: var(--pink);
+}
+
+.section-title p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #222c45;
+    border-radius: 13px;
+    padding: 30px 24px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--pink);
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.about {
+    background: #0d1222;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.live {
+    background:
+    radial-gradient(circle at 50% 50%, #18294e, transparent 65%),
+    #080b18;
+    text-align: center;
+}
+
+.live-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 45px 25px;
+    background: #11172a;
+    border: 1px solid #344366;
+    border-radius: 15px;
+}
+
+.live-box h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.live-box p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.download {
+    background: #0d1222;
+    text-align: center;
+}
+
+.download p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    padding: 35px 7%;
+    background: #050711;
+    border-top: 1px solid #202941;
+    text-align: center;
+}
+
+footer .logo {
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links {
+    margin: 18px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.risk {
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+@media(max-width: 850px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #090d1c;
+        padding: 25px;
+        flex-direction: column;
+        border-bottom: 1px solid #303b55;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 85px 7%;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+}
+</style>
 </head>
+
 <body>
-  <header class="wrap">
-    <nav class="nav">
-      <a class="brand" href="#home" aria-label="GOLD QUEEN home"><span class="crown">♛</span><span>GOLD QUEEN</span></a>
-      <div class="navlinks" id="navlinks">
-        <a href="#about">About</a><a href="#features">Features</a><a href="#strategy">Strategy</a><a href="#risk">Risk Disclosure</a><a href="#contact">Contact</a>
-      </div>
-      <a class="btn" href="#contact">GET STARTED</a>
-      <button class="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Open menu">☰</button>
+
+<header>
+    <a href="index.html" class="logo">
+        GOLD <span>QUEEN</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="features.html">FEATURES</a>
+        <a href="live-sessions.html">LIVE SESSIONS</a>
+        <a href="downloads.html">DOWNLOADS</a>
+        <a href="contact.html">CONTACT</a>
     </nav>
-  </header>
+</header>
 
-  <main>
-    <section class="wrap hero" id="home">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> AUTOMATED GOLD TRADING</div>
-        <h1>Meet the power of <span class="gradient">GOLD QUEEN.</span></h1>
-        <p>A configurable automated trading system built for traders who want structured execution, trade management and strategy controls in one place.</p>
-        <div class="actions"><a class="btn" href="#features">EXPLORE FEATURES</a><a class="btn ghost" href="#strategy">HOW IT WORKS</a></div>
-        <p class="fine">Trading involves risk. No strategy can guarantee profits or prevent losses.</p>
-      </div>
-      <div class="visual" aria-label="GOLD QUEEN crown graphic">
-        <div class="orb"><div class="queenmark">♛</div></div>
-        <div class="float-card fc1"><strong>GOLD QUEEN</strong>Automated strategy system</div>
-        <div class="float-card fc2"><strong>CONTROL YOUR SETTINGS</strong>Configure strategy parameters</div>
-      </div>
-    </section>
+<main>
 
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="section-head"><div class="kicker">THE SYSTEM</div><h2>Built around your trading strategy.</h2><p>GOLD QUEEN is a trading robot designed around martingale and hedging logic. Its behaviour depends on the settings selected by the user and the conditions in the market.</p></div>
-        <div class="grid">
-          <article class="card"><div class="icon">⚙️</div><h3>Configurable</h3><p>Strategy parameters can be adjusted to match the trader's chosen setup and risk tolerance.</p></article>
-          <article class="card"><div class="icon">↔️</div><h3>Hedging Logic</h3><p>Uses hedge positions as part of its trade-management approach. Hedging does not remove market risk.</p></article>
-          <article class="card"><div class="icon">♟</div><h3>Martingale Logic</h3><p>Applies a position-sizing recovery method. Increasing exposure can also increase losses quickly.</p></article>
+<div class="hero">
+    <div class="hero-content">
+
+        <div class="tag">THE FUTURE OF GOLD TRADING</div>
+
+        <h1>
+            TRADE GOLD.<br>
+            <span>TRADE SMARTER.</span>
+        </h1>
+
+        <p>
+            Meet GOLD QUEEN — an automated trading system
+            designed for XAUUSD, bringing trading technology,
+            automation and market execution together.
+        </p>
+
+        <div class="buttons">
+            <a href="downloads.html" class="btn btn-primary">
+                EXPLORE GOLD QUEEN →
+            </a>
+
+            <a href="about.html" class="btn btn-secondary">
+                DISCOVER MORE
+            </a>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="features">
-      <div class="wrap">
-        <div class="section-head"><div class="kicker">KEY CAPABILITIES</div><h2>Tools for structured execution.</h2><p>Explore the core strategy concepts behind GOLD QUEEN. Exact functions and supported platform versions should be confirmed against the EA build.</p></div>
-        <div class="grid">
-          <article class="card"><div class="icon">📊</div><h3>Automated Trading</h3><p>Designed to execute its programmed trading logic automatically once configured and enabled.</p></article>
-          <article class="card"><div class="icon">🛡️</div><h3>Trade Management</h3><p>Strategy-based handling of open positions. Users should understand every setting before live use.</p></article>
-          <article class="card"><div class="icon">⚖️</div><h3>Position Sizing</h3><p>Martingale-style sizing can increase lot exposure after losses. Use conservative settings and test thoroughly.</p></article>
-          <article class="card"><div class="icon">🔁</div><h3>Hedge Positions</h3><p>May open opposing positions as part of its programmed hedge logic, depending on configuration.</p></article>
-          <article class="card"><div class="icon">🎛️</div><h3>User Parameters</h3><p>EA inputs determine how the robot behaves. Available controls will be documented for the released version.</p></article>
-          <article class="card"><div class="icon">🧪</div><h3>Testing First</h3><p>Backtest and forward-test on a demo account before considering any live deployment.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="strategy">
-      <div class="wrap split">
-        <div class="feature-panel"><div class="kicker">STRATEGY OVERVIEW</div><h3>Martingale + Hedging</h3><p class="muted">GOLD QUEEN combines two techniques that can materially change account exposure.</p><ul class="checks"><li>Martingale-based position sizing</li><li>Hedge-based trade management</li><li>Configurable inputs (subject to EA version)</li><li>Designed for systematic execution</li></ul></div>
-        <div class="feature-panel"><div class="kicker">BEFORE YOU TRADE</div><h3>Understand the settings.</h3><p class="muted">Do not run an automated strategy with default settings until you understand its entry rules, lot progression, maximum positions, hedge behaviour and exit conditions.</p><ul class="checks"><li>Test across different market conditions</li><li>Set a maximum acceptable drawdown</li><li>Use funds you can afford to lose</li><li>Monitor execution, spread and slippage</li></ul></div>
-      </div>
-    </section>
-
-    <section class="section" id="risk">
-      <div class="wrap">
-        <div class="section-head"><div class="kicker">IMPORTANT INFORMATION</div><h2>Risk disclosure.</h2><p>Automated trading does not make trading risk-free. Please read this before using GOLD QUEEN.</p></div>
-        <div class="notice"><strong>Martingale and hedging strategies carry substantial risk.</strong><p>Martingale systems may increase position sizes after losses, causing exposure and drawdown to grow rapidly during prolonged adverse market moves. Hedging can lock in losses, increase margin usage and incur additional spreads, commissions or swap charges. Fast markets, gaps, slippage, broker execution limits and insufficient margin may cause losses greater than expected, including loss of the trading account. Backtests and past results do not guarantee future performance. GOLD QUEEN is a software tool, not financial advice or a promise of returns. Always test on demo, read the EA documentation and use risk limits you understand.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="wrap">
-        <div class="cta"><div class="kicker">GOLD QUEEN</div><h2>Ready to learn more?</h2><p>Product details, supported platforms, licence options, downloads and official support information will be published here once confirmed.</p><a class="btn" href="#home">BACK TO TOP</a></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-inner"><span>© <span id="year"></span> GOLD QUEEN. All rights reserved.</span><span>Automated trading software · Trade responsibly</span></div>
-      <p class="disclaimer">Risk Warning: Forex and CFD trading involves significant risk and may not be suitable for all investors. Martingale and hedging methods can increase exposure and may result in rapid or total loss of capital. Nothing on this website is investment advice or a guarantee of performance.</p>
     </div>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));</script>
+</div>
+
+<section>
+    <div class="section-title">
+        <h2>WHY <span>GOLD QUEEN?</span></h2>
+        <p>Technology built around automated gold trading.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Automated Trading</h3>
+            <p>
+                Designed to automate trading operations
+                without requiring constant manual execution.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Gold Focused</h3>
+            <p>
+                Developed specifically for the XAUUSD
+                gold trading market.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Trading Management</h3>
+            <p>
+                Built with automated trade management
+                and account monitoring capabilities.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-content">
+
+        <div class="section-title">
+            <h2>MEET <span>GOLD QUEEN</span></h2>
+        </div>
+
+        <p>
+            GOLD QUEEN is an automated trading product
+            created for traders interested in gold market
+            automation.
+        </p>
+
+        <p>
+            Our vision is to make trading technology
+            accessible through a simple, organised
+            and user-friendly experience.
+        </p>
+
+        <a href="about.html" class="btn btn-primary">
+            MORE ABOUT US →
+        </a>
+
+    </div>
+</section>
+
+<section class="live">
+    <div class="live-box">
+
+        <div class="tag">GOLD QUEEN COMMUNITY</div>
+
+        <h2>LIVE TRADING SESSIONS</h2>
+
+        <p>
+            Stay connected with our live trading sessions,
+            market discussions and educational activities.
+        </p>
+
+        <a href="live-sessions.html" class="btn btn-primary">
+            EXPLORE LIVE SESSIONS →
+        </a>
+
+    </div>
+</section>
+
+<section class="download">
+    <div class="section-title">
+        <h2>GET <span>GOLD QUEEN</span></h2>
+        <p>
+            Visit our dedicated software access page
+            for installation information and updates.
+        </p>
+    </div>
+
+    <a href="downloads.html" class="btn btn-primary">
+        SOFTWARE ACCESS →
+    </a>
+</section>
+
+<section class="contact">
+    <div class="section-title">
+        <h2>LET'S <span>CONNECT</span></h2>
+        <p>
+            Have questions or need assistance?
+            Our communication channels are here for you.
+        </p>
+    </div>
+
+    <div class="buttons" style="justify-content:center">
+        <a href="contact.html" class="btn btn-primary">
+            CONTACT OUR TEAM
+        </a>
+
+        <a href="community.html" class="btn btn-secondary">
+            JOIN OUR COMMUNITY
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer>
+
+    <div class="logo">GOLD <span>QUEEN</span></div>
+
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="features.html">Features</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="contact.html">Contact</a>
+        <a href="community.html">Community</a>
+    </div>
+
+    <p>© 2026 GOLD QUEEN. All Rights Reserved.</p>
+
+    <p class="risk">CFD trading involves risk.</p>
+
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navigation")
+    .classList.toggle("active");
+}
+</script>
+
 </body>
-</html>
+  </html>
