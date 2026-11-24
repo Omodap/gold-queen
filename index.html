@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b18">
 
-<title>GOLD QUEEN | Intelligent Gold Trading</title>
+<title>GOLD QUEEN EA | Automated Gold Trading</title>
 
-<meta name="description" content="Discover GOLD QUEEN, an automated trading system designed for XAUUSD. Explore its features, live sessions and software access.">
+<meta name="description" content="Discover GOLD QUEEN EA, an automated XAUUSD trading solution for MetaTrader 5.">
 
 <style>
 * {
@@ -16,322 +15,261 @@
     box-sizing: border-box;
 }
 
-:root {
-    --bg: #080b18;
-    --card: #11172a;
-    --blue: #3987ff;
-    --pink: #f044a5;
-    --white: #ffffff;
-    --muted: #a6afc4;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--white);
+    background: #080d1c;
+    color: #fff;
     line-height: 1.7;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 header {
+    background: #10182b;
+    padding: 18px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 7%;
-    background: #090d1c;
-    border-bottom: 1px solid #202941;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #263653;
 }
 
 .logo {
-    font-size: 21px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    font-size: 23px;
+    font-weight: bold;
 }
 
 .logo span {
-    color: var(--pink);
+    color: #ed65b9;
 }
 
 nav {
     display: flex;
-    gap: 23px;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 17px;
 }
 
 nav a {
+    color: #ddd;
+    text-decoration: none;
     font-size: 13px;
-    color: #d6dcec;
-    transition: .3s;
 }
 
 nav a:hover {
-    color: var(--pink);
-}
-
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 27px;
+    color: #ed65b9;
 }
 
 .hero {
-    min-height: 610px;
-    padding: 110px 8%;
+    min-height: 570px;
+    padding: 100px 20px;
     display: flex;
     align-items: center;
-    background:
-    radial-gradient(circle at 85% 30%, #172d5b 0%, transparent 40%),
-    radial-gradient(circle at 15% 80%, #42163e 0%, transparent 35%),
-    #080b18;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #192c55, #080d1c 70%);
 }
 
 .hero-content {
-    max-width: 720px;
+    max-width: 800px;
 }
 
 .tag {
     display: inline-block;
-    padding: 7px 15px;
-    border: 1px solid var(--pink);
-    color: #ff80c8;
+    padding: 7px 17px;
+    border: 1px solid #ed65b9;
+    color: #ed65b9;
     border-radius: 30px;
     font-size: 12px;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 8vw, 75px);
-    line-height: 1.12;
-    font-weight: 900;
-    margin-bottom: 25px;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero h1 span {
-    background: linear-gradient(90deg, var(--blue), var(--pink));
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #ed65b9;
 }
 
 .hero p {
-    color: var(--muted);
-    max-width: 550px;
-    font-size: 16px;
-    margin-bottom: 32px;
+    color: #c4ccdc;
+    max-width: 650px;
+    margin: 0 auto 30px;
 }
 
-.buttons {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.btn {
+.button {
     display: inline-block;
-    padding: 14px 25px;
+    padding: 13px 27px;
     border-radius: 7px;
-    font-size: 13px;
+    background: linear-gradient(90deg, #2778ff, #e45bb5);
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    transition: .3s;
+    margin: 6px;
 }
 
-.btn-primary {
-    background: linear-gradient(100deg, var(--blue), var(--pink));
-    color: white;
+.button:hover {
+    opacity: 0.85;
 }
 
-.btn-secondary {
-    border: 1px solid #48536d;
-    color: white;
+.button-outline {
+    background: transparent;
+    border: 1px solid #5275b5;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-section {
-    padding: 85px 8%;
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 20px;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title h2 {
-    font-size: 34px;
-    margin-bottom: 12px;
-}
-
-.section-title h2 span {
-    color: var(--pink);
-}
-
-.section-title p {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.card {
-    background: var(--card);
-    border: 1px solid #222c45;
-    border-radius: 13px;
-    padding: 30px 24px;
-    transition: .3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: var(--pink);
-}
-
-.icon {
     font-size: 30px;
     margin-bottom: 15px;
 }
 
+.section-title span {
+    color: #ed65b9;
+}
+
+.section-intro {
+    text-align: center;
+    color: #b9c3d5;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111b30;
+    border: 1px solid #263653;
+    border-radius: 13px;
+    padding: 27px 22px;
+}
+
 .card h3 {
+    color: #fff;
     margin-bottom: 12px;
-    font-size: 19px;
 }
 
 .card p {
-    color: var(--muted);
+    color: #b9c3d5;
     font-size: 14px;
 }
 
-.about {
-    background: #0d1222;
+.card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ed65b9;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: auto;
+.highlight {
+    background: linear-gradient(120deg, #122449, #20142e);
+    border-top: 1px solid #30436a;
+    border-bottom: 1px solid #30436a;
     text-align: center;
 }
 
-.about-content p {
-    color: var(--muted);
-    margin-bottom: 25px;
+.highlight p {
+    color: #c4ccdc;
+    max-width: 700px;
+    margin: 15px auto 25px;
 }
 
-.live {
-    background:
-    radial-gradient(circle at 50% 50%, #18294e, transparent 65%),
-    #080b18;
+.request-box {
     text-align: center;
-}
-
-.live-box {
-    max-width: 750px;
-    margin: auto;
+    background: #111b30;
+    border: 1px solid #344563;
+    border-radius: 16px;
     padding: 45px 25px;
-    background: #11172a;
-    border: 1px solid #344366;
-    border-radius: 15px;
 }
 
-.live-box h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
+.request-box p {
+    color: #c4ccdc;
+    max-width: 650px;
+    margin: 12px auto 20px;
 }
 
-.live-box p {
-    color: var(--muted);
-    margin-bottom: 25px;
-}
-
-.download {
-    background: #0d1222;
-    text-align: center;
-}
-
-.download p {
-    color: var(--muted);
-    margin-bottom: 25px;
-}
-
-.contact {
-    text-align: center;
-}
-
-footer {
-    padding: 35px 7%;
-    background: #050711;
-    border-top: 1px solid #202941;
-    text-align: center;
-}
-
-footer .logo {
-    margin-bottom: 12px;
-}
-
-footer p {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.footer-links {
-    margin: 18px 0;
+.social-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #344563;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.social-links a:hover {
+    border-color: #ed65b9;
+    color: #ed65b9;
+}
+
+footer {
+    background: #10182b;
+    padding: 35px 20px;
+    text-align: center;
+    color: #929db2;
     font-size: 13px;
+    border-top: 1px solid #263653;
 }
 
-.risk {
-    font-size: 11px;
-    margin-top: 20px;
+.footer-links {
+    margin: 15px 0;
 }
 
-@media(max-width: 850px) {
+.footer-links a {
+    color: #c4ccdc;
+    text-decoration: none;
+    margin: 7px;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ed65b9;
+}
+
+@media(max-width: 750px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
     nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: #090d1c;
-        padding: 25px;
-        flex-direction: column;
-        border-bottom: 1px solid #303b55;
-    }
-
-    nav.active {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 12px;
     }
 
     .hero {
-        min-height: 550px;
-        padding: 85px 7%;
+        min-height: 480px;
+        padding: 75px 20px;
     }
 
-    section {
-        padding: 65px 7%;
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .section-title {
+        font-size: 26px;
     }
 }
 </style>
@@ -340,196 +278,190 @@ footer p {
 <body>
 
 <header>
-    <a href="index.html" class="logo">
-        GOLD <span>QUEEN</span>
-    </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+        GOLD <span>QUEEN</span> EA
+    </div>
 
-    <nav id="navigation">
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT US</a>
-        <a href="features.html">FEATURES</a>
-        <a href="live-sessions.html">LIVE SESSIONS</a>
-        <a href="downloads.html">DOWNLOADS</a>
-        <a href="contact.html">CONTACT</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="live-sessions.html">Live Sessions</a>
+        <a href="downloads.html">Request EA</a>
+        <a href="community.html">Community</a>
+        <a href="contact.html">Contact</a>
     </nav>
+
 </header>
 
-<main>
+<section class="hero">
 
-<div class="hero">
     <div class="hero-content">
 
-        <div class="tag">THE FUTURE OF GOLD TRADING</div>
+        <div class="tag">AUTOMATED GOLD TRADING SOLUTION</div>
 
         <h1>
             TRADE GOLD.<br>
-            <span>TRADE SMARTER.</span>
+            TRADE <span>SMARTER.</span>
         </h1>
 
         <p>
-            Meet GOLD QUEEN — an automated trading system
-            designed for XAUUSD, bringing trading technology,
-            automation and market execution together.
+            Discover GOLD QUEEN EA, an automated trading solution
+            designed for XAUUSD on MetaTrader 5.
+            Experience a structured approach to automated gold trading.
         </p>
 
-        <div class="buttons">
-            <a href="downloads.html" class="btn btn-primary">
-                EXPLORE GOLD QUEEN →
-            </a>
+        <a href="downloads.html" class="button">
+            REQUEST EA →
+        </a>
 
-            <a href="about.html" class="btn btn-secondary">
-                DISCOVER MORE
-            </a>
-        </div>
+        <a href="features.html" class="button button-outline">
+            EXPLORE FEATURES
+        </a>
 
     </div>
-</div>
 
-<section>
-    <div class="section-title">
-        <h2>WHY <span>GOLD QUEEN?</span></h2>
-        <p>Technology built around automated gold trading.</p>
-    </div>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">
+        MEET <span>GOLD QUEEN</span>
+    </h2>
+
+    <p class="section-intro">
+        GOLD QUEEN EA is an automated trading solution
+        focused on the Gold market, built for traders
+        who use MetaTrader 5.
+    </p>
 
     <div class="cards">
 
         <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Automated Trading</h3>
-            <p>
-                Designed to automate trading operations
-                without requiring constant manual execution.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📊</div>
             <h3>Gold Focused</h3>
             <p>
-                Developed specifically for the XAUUSD
-                gold trading market.
+                Dedicated to XAUUSD trading.
             </p>
+            <a href="about.html">LEARN MORE →</a>
         </div>
 
         <div class="card">
-            <div class="icon">🛡️</div>
-            <h3>Trading Management</h3>
+            <h3>Automated Trading</h3>
             <p>
-                Built with automated trade management
-                and account monitoring capabilities.
+                Designed to execute trading operations automatically
+                according to its programmed strategy.
             </p>
+            <a href="features.html">EXPLORE FEATURES →</a>
+        </div>
+
+        <div class="card">
+            <h3>MetaTrader 5</h3>
+            <p>
+                Built for use with the MetaTrader 5 trading platform.
+            </p>
+            <a href="account-guide.html">ACCOUNT GUIDE →</a>
         </div>
 
     </div>
+
 </section>
 
-<section class="about">
-    <div class="about-content">
+<section class="highlight">
 
-        <div class="section-title">
-            <h2>MEET <span>GOLD QUEEN</span></h2>
-        </div>
+    <div class="container">
 
-        <p>
-            GOLD QUEEN is an automated trading product
-            created for traders interested in gold market
-            automation.
-        </p>
+        <h2 class="section-title">
+            DISCOVER THE <span>GOLD QUEEN EXPERIENCE</span>
+        </h2>
 
         <p>
-            Our vision is to make trading technology
-            accessible through a simple, organised
-            and user-friendly experience.
+            Explore our product information, trading features
+            and community activities.
         </p>
 
-        <a href="about.html" class="btn btn-primary">
-            MORE ABOUT US →
+        <a href="live-sessions.html" class="button">
+            EXPLORE LIVE SESSIONS
         </a>
 
-    </div>
-</section>
-
-<section class="live">
-    <div class="live-box">
-
-        <div class="tag">GOLD QUEEN COMMUNITY</div>
-
-        <h2>LIVE TRADING SESSIONS</h2>
-
-        <p>
-            Stay connected with our live trading sessions,
-            market discussions and educational activities.
-        </p>
-
-        <a href="live-sessions.html" class="btn btn-primary">
-            EXPLORE LIVE SESSIONS →
-        </a>
-
-    </div>
-</section>
-
-<section class="download">
-    <div class="section-title">
-        <h2>GET <span>GOLD QUEEN</span></h2>
-        <p>
-            Visit our dedicated software access page
-            for installation information and updates.
-        </p>
-    </div>
-
-    <a href="downloads.html" class="btn btn-primary">
-        SOFTWARE ACCESS →
-    </a>
-</section>
-
-<section class="contact">
-    <div class="section-title">
-        <h2>LET'S <span>CONNECT</span></h2>
-        <p>
-            Have questions or need assistance?
-            Our communication channels are here for you.
-        </p>
-    </div>
-
-    <div class="buttons" style="justify-content:center">
-        <a href="contact.html" class="btn btn-primary">
-            CONTACT OUR TEAM
-        </a>
-
-        <a href="community.html" class="btn btn-secondary">
+        <a href="community.html" class="button button-outline">
             JOIN OUR COMMUNITY
         </a>
+
     </div>
+
 </section>
 
-</main>
+<section class="container">
+
+    <div class="request-box">
+
+        <h2 class="section-title">
+            READY TO <span>REQUEST YOUR EA?</span>
+        </h2>
+
+        <p>
+            Contact our official Telegram administrator
+            to request GOLD QUEEN EA and receive information
+            about access, licensing and activation.
+        </p>
+
+        <a href="https://t.me/goldqueenea_admin"
+           class="button"
+           target="_blank"
+           rel="noopener">
+            REQUEST GOLD QUEEN EA →
+        </a>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">
+        CONNECT WITH <span>GOLD QUEEN</span>
+    </h2>
+
+    <p class="section-intro">
+        Follow our social platforms for official updates,
+        videos, announcements and community information.
+    </p>
+
+    <div class="social-links">
+
+        <a href="community.html">Telegram Community</a>
+
+        <a href="community.html">TikTok</a>
+
+        <a href="community.html">YouTube</a>
+
+    </div>
+
+</section>
 
 <footer>
 
-    <div class="logo">GOLD <span>QUEEN</span></div>
-
-    <div class="footer-links">
-        <a href="about.html">About Us</a>
-        <a href="features.html">Features</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="contact.html">Contact</a>
-        <a href="community.html">Community</a>
+    <div class="logo">
+        GOLD <span>QUEEN</span> EA
     </div>
 
-    <p>© 2026 GOLD QUEEN. All Rights Reserved.</p>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="live-sessions.html">Live Sessions</a>
+        <a href="downloads.html">Request EA</a>
+        <a href="account-guide.html">Account Guide</a>
+        <a href="community.html">Community</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
-    <p class="risk">CFD trading involves risk.</p>
+    <p>© 2026 GOLD QUEEN EA. All Rights Reserved.</p>
+
+    <p>CFD trading involves risk.</p>
 
 </footer>
-
-<script>
-function toggleMenu() {
-    document.getElementById("navigation")
-    .classList.toggle("active");
-}
-</script>
 
 </body>
 </html>
