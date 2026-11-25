@@ -3,147 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b18">
-<title>Account Guide | GOLD QUEEN</title>
+<meta name="theme-color" content="#080d1c">
+<title>Account Guide | GOLD QUEEN EA</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#080b18;color:white;line-height:1.8}
-header{padding:20px 7%;background:#090d1c;border-bottom:1px solid #202941;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:900;text-decoration:none;color:white}
-.logo span{color:#f044a5}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#d6dcec;text-decoration:none;font-size:13px}
-nav a:hover{color:#f044a5}
-.hero{text-align:center;padding:90px 7%;background:radial-gradient(circle at center,#192b51,transparent 65%)}
-.tag{color:#ff80c8;letter-spacing:3px;font-size:12px}
-h1{font-size:clamp(36px,7vw,60px);margin:20px 0}
-h1 span,h2 span{color:#f044a5}
-.hero p{max-width:650px;margin:auto;color:#a6afc4}
-section{padding:65px 8%}
-.container{max-width:850px;margin:auto}
-.box{background:#11172a;border:1px solid #283654;border-radius:13px;padding:30px;margin-bottom:22px}
-.box h2{margin-bottom:15px}
-.box p{color:#a6afc4;margin-bottom:12px}
-.number{font-size:25px;font-weight:bold;color:#f044a5;margin-bottom:8px}
-.btn{display:inline-block;padding:13px 24px;background:linear-gradient(100deg,#3987ff,#f044a5);border-radius:6px;color:white;text-decoration:none;font-weight:bold;margin-top:15px}
-.note{background:#17233c;border-left:4px solid #3987ff;padding:18px;border-radius:5px;color:#d6dcec;margin-top:15px;font-size:14px}
-footer{text-align:center;padding:30px;background:#050711;border-top:1px solid #202941;color:#a6afc4;font-size:12px}
-@media(max-width:650px){
-header{align-items:flex-start;flex-direction:column;gap:15px}
-nav{gap:12px}
-}
+body{font-family:Arial,sans-serif;background:#080d1c;color:#fff;line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{background:#0d1428;border-bottom:1px solid #202a42;padding:18px 6%}
+nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px}
+.logo span{color:#ed4b9b}
+.nav-links{display:flex;flex-wrap:wrap;gap:15px;font-size:13px;color:#c5cadd}
+.nav-links a:hover{color:#ed4b9b}
+.hero{text-align:center;padding:85px 20px;background:radial-gradient(circle at top,rgba(38,105,220,.23),transparent 55%)}
+.tag{display:inline-block;color:#ff72b5;border:1px solid rgba(237,75,155,.4);background:rgba(237,75,155,.08);border-radius:30px;padding:7px 17px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+h1{font-size:clamp(36px,6vw,58px);line-height:1.2;margin-bottom:18px}
+h1 span{color:#ed4b9b}
+.hero p{max-width:700px;margin:auto;color:#b8c1d8}
+.container{max-width:1000px;margin:auto;padding:65px 20px}
+.intro{background:linear-gradient(145deg,#141f3a,#0d1428);border:1px solid rgba(255,255,255,.09);border-radius:17px;padding:30px;margin-bottom:25px}
+.intro h2{font-size:25px;margin-bottom:12px}
+.intro p{color:#b8c1d8;font-size:14px}
+.step{display:flex;gap:20px;padding:25px;margin:18px 0;background:#111b33;border:1px solid rgba(255,255,255,.08);border-radius:15px}
+.number{min-width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2868e8,#ed4b9b);font-weight:bold}
+.step h3{font-size:18px;margin-bottom:7px;color:#ff72b5}
+.step p{font-size:13px;color:#b4bfd5}
+.warning{margin-top:35px;padding:25px;background:rgba(237,75,155,.07);border-left:4px solid #ed4b9b;border-radius:8px}
+.warning h3{margin-bottom:10px}
+.warning p{font-size:13px;color:#c1c9dc}
+.cta{text-align:center;margin-top:40px;padding:40px 20px;border-radius:18px;background:linear-gradient(120deg,#14264c,#25152f);border:1px solid rgba(237,75,155,.25)}
+.cta h2{font-size:26px;margin-bottom:10px}
+.cta p{color:#c1c9dc;margin-bottom:22px;font-size:14px}
+.button{display:inline-block;padding:13px 25px;border-radius:8px;background:linear-gradient(90deg,#2868e8,#ed4b9b);font-size:13px;font-weight:bold}
+.button:hover{opacity:.85}
+footer{background:#050914;border-top:1px solid rgba(255,255,255,.08);padding:30px 20px;text-align:center}
+footer p{color:#8995ad;font-size:12px;margin:5px}
+footer .brand{color:#ed4b9b;font-weight:bold;font-size:16px}
+@media(max-width:650px){nav{justify-content:center}.nav-links{justify-content:center;gap:12px}.hero{padding-top:65px}.step{gap:13px;padding:20px}}
 </style>
 </head>
 
 <body>
 
 <header>
-<a href="index.html" class="logo">GOLD <span>QUEEN</span></a>
 <nav>
-<a href="index.html">HOME</a>
-<a href="about.html">ABOUT</a>
-<a href="features.html">FEATURES</a>
-<a href="live-sessions.html">LIVE SESSIONS</a>
-<a href="downloads.html">DOWNLOADS</a>
-<a href="contact.html">CONTACT</a>
+<a href="index.html" class="logo">GOLD <span>QUEEN</span> EA</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="features.html">Features</a>
+<a href="live-sessions.html">Live Sessions</a>
+<a href="downloads.html">Request EA</a>
+<a href="account-guide.html">Account Guide</a>
+<a href="community.html">Community</a>
+<a href="contact.html">Contact</a>
+</div>
 </nav>
 </header>
 
-<div class="hero">
-<div class="tag">CUSTOMER RESOURCES</div>
+<section class="hero">
+<div class="tag">GETTING STARTED</div>
 <h1>ACCOUNT <span>GUIDE</span></h1>
 <p>
-Everything you need to know about preparing your
-MetaTrader 5 account for GOLD QUEEN.
+Learn what you need to prepare before requesting and setting up
+GOLD QUEEN EA on MetaTrader 5.
 </p>
-</div>
-
-<section>
-<div class="container">
-
-<div class="box">
-<div class="number">01</div>
-<h2>PREPARE YOUR <span>TRADING ACCOUNT</span></h2>
-<p>
-Open a compatible MetaTrader 5 trading account
-with a supported broker.
-</p>
-<p>
-Check that your account is suitable for XAUUSD
-trading and meets the published GOLD QUEEN
-account requirements.
-</p>
-</div>
-
-<div class="box">
-<div class="number">02</div>
-<h2>INSTALL <span>METATRADER 5</span></h2>
-<p>
-Install the MetaTrader 5 desktop terminal on
-your computer or configure a compatible VPS.
-</p>
-<p>
-Log in using your trading account credentials.
-</p>
-</div>
-
-<div class="box">
-<div class="number">03</div>
-<h2>INSTALL <span>GOLD QUEEN</span></h2>
-<p>
-Obtain the official GOLD QUEEN EA installation
-package through the authorised software access process.
-</p>
-<p>
-Follow the installation instructions supplied
-with your software package.
-</p>
-</div>
-
-<div class="box">
-<div class="number">04</div>
-<h2>ACTIVATE YOUR <span>LICENCE</span></h2>
-<p>
-Enter your authorised GOLD QUEEN licence details
-when prompted by the EA.
-</p>
-<p>
-Complete the online verification process before
-using the software.
-</p>
-</div>
-
-<div class="box">
-<div class="number">05</div>
-<h2>CONNECT AND <span>VERIFY</span></h2>
-<p>
-Attach GOLD QUEEN to the appropriate XAUUSD chart
-and confirm that the EA is connected and operating.
-</p>
-
-<div class="note">
-Use the software according to its official
-installation instructions. CFD trading involves risk.
-</div>
-</div>
-
-<div class="box">
-<h2>NEED <span>HELP?</span></h2>
-<p>
-If you need assistance with account preparation,
-installation or licence activation, contact our team.
-</p>
-<a href="contact.html" class="btn">CONTACT SUPPORT →</a>
-</div>
-
-</div>
 </section>
 
+<main class="container">
+
+<section class="intro">
+<h2>Before You Get Started</h2>
+<p>
+GOLD QUEEN EA is an Expert Advisor designed for Gold trading
+on MetaTrader 5. It runs on a compatible MT5 desktop terminal
+or VPS environment. The Android and iOS MT5 mobile apps do not
+run Expert Advisors.
+</p>
+</section>
+
+<div class="step">
+<div class="number">1</div>
+<div>
+<h3>Prepare a Trading Account</h3>
+<p>
+You need a live trading account with a broker that supports
+MetaTrader 5 and the required XAUUSD trading conditions.
+Check the broker's contract specifications, spreads, leverage
+and execution conditions before using the EA.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">2</div>
+<div>
+<h3>Prepare MetaTrader 5</h3>
+<p>
+Install the desktop version of MetaTrader 5 on a compatible
+Windows computer or VPS. Keep the terminal running and connected
+to the internet while the EA is operating.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">3</div>
+<div>
+<h3>Request GOLD QUEEN EA</h3>
+<p>
+Contact the official GOLD QUEEN EA admin to request access
+and receive the relevant EA file and setup instructions.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">4</div>
+<div>
+<h3>Install and Configure</h3>
+<p>
+Follow the official installation instructions provided with
+your EA access. Use the supplied configuration and do not
+change protected strategy settings.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">5</div>
+<div>
+<h3>Monitor Your Trading Account</h3>
+<p>
+Check your account regularly. Monitor equity, margin,
+open positions and trading activity. Automated trading
+does not remove the need for supervision.
+</p>
+</div>
+</div>
+
+<section class="warning">
+<h3>⚠️ Important Risk Information</h3>
+<p>
+GOLD QUEEN EA uses martingale and hedging techniques.
+These can increase exposure and may lead to substantial losses.
+You can lose some or all of your trading capital.
+Only use money you can afford to lose. No profit is guaranteed.
+</p>
+</section>
+
+<section class="cta">
+<h2>Need Help Getting Started?</h2>
+<p>Contact our official admin for access and installation guidance.</p>
+<a class="button" href="https://t.me/goldqueenea_admin" target="_blank" rel="noopener noreferrer">
+CONTACT GOLD QUEEN ADMIN
+</a>
+</section>
+
+</main>
+
 <footer>
-<div class="logo">GOLD <span>QUEEN</span></div>
-<p>© 2026 GOLD QUEEN. All Rights Reserved.</p>
-<p>CFD trading involves risk.</p>
+<p class="brand">GOLD QUEEN EA</p>
+<p>Automated Gold Trading Technology</p>
+<p>© 2026 GOLD QUEEN EA. All rights reserved.</p>
+<p>CFD trading involves risk. Past performance does not guarantee future results.</p>
 </footer>
 
 </body>
